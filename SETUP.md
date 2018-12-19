@@ -7,6 +7,8 @@ And then
 pip install aprslib
 pip install pyyaml
 pip install flask-restful
+pip install flask_cors
+
 sudo apt-get install python-twisted
 ```
 Now edit stationservice.service:
