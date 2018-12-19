@@ -1,0 +1,15 @@
+[Unit]
+Description=Monitors APRS-IS feed for configured stations
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/kf6gpe/Projects/Python/pyaprs-stationservice
+Environment="PYTHONPATH=/home/kf6gpe/.local/lib/python2.7/site-packages:."
+ExecStart=/usr/bin/twistd -n web --port tcp:8080 --wsgi stationservice.app
+ExecStop=/bin/kill -9 `/bin/ps -ax | /bin/grep stationservice.app | /bin/grep -v grep | /usr/bin/colrm 6`
+Restart=on-failure
+StandardOuptut=tty
+
+[Install]
+WantedBy=multi-user.target

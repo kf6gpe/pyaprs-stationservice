@@ -2,4 +2,5 @@
 pip install aprslib
 pip install pyyaml
 pip install flask-restful
-pip install twisted
+sudo apt-get install python-twisted
+NO pip install twisted
