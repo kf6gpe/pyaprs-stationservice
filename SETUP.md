@@ -1,4 +1,5 @@
 
-pip3 install aprslib
-pip3 install pyyaml
-pip3 install flask-restful
+pip install aprslib
+pip install pyyaml
+pip install flask-restful
+pip install twisted
