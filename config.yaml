@@ -1,5 +1,5 @@
 login: KF6GPE
-password: -1
+password: 24230
 stations:
   - kf6gpe
   - KF6NVR
@@ -7,4 +7,6 @@ stations:
   - N6RJX
   - KO6XX
   - AF6SE
+  - KC1XX
+  
 
