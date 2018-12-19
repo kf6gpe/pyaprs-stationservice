@@ -35,7 +35,10 @@ def handlePacket(packet):
     if (m != None):
         packet['timestamp'] = time.time()
         packet['result'] = 'OK'
-        _stationList[packet['from']] = packet
+        if packet['from'] in _stationList:
+            _stationList[packet['from']].update(packet)
+        else:
+            _stationList[packet['from']] = packet
         print(packet['from'])
 
 def runAprsMonitor():
@@ -47,8 +50,8 @@ def runAprsMonitor():
             print('- Connected! Handling incoming packets.')
             AIS.consumer(handlePacket)
         except:
-            print('- APRS server socket failure... reconnecting in 10 seconds')
-            time.sleep(10)
+            print('- APRS server socket failure... reconnecting in 3 seconds')
+            time.sleep(3)
             
 # Read configuration
 configFile = open("config.yaml")
