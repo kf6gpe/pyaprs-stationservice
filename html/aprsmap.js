@@ -1,6 +1,5 @@
 async function getMapUrl(id, callsign, zoom, width, height, maptype) {
     zoom = zoom || 15;
-    console.log(zoom);
     maptype = maptype || 'hybrid';
     width = width || 300;
     height = height || 200;

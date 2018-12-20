@@ -46,7 +46,10 @@ def handlePacket(packet):
 def runAprsMonitor():
     while True:
         try:
-            AIS = aprslib.IS(login, passwd = password)
+            if password is not None:
+                AIS = aprslib.IS(login, passwd = password)
+            else:
+                AIS = aprslib.IS(login)
             print('- Connecting to APRS-IS...')
             AIS.connect()
             print('- Connected! Handling incoming packets.')
@@ -69,7 +72,7 @@ else:
 if 'password' in config:
     password =  config['password']
 else:
-    password = ''
+    password = None
 
 # Convert station list to regular expression and compile.
 stationExpression = ''
