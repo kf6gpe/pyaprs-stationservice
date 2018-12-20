@@ -17,7 +17,7 @@ async function getMapUrl(id, callsign, zoom, width, height, maptype) {
 	var size = 'size=' + width + 'x' + height + '&';
 	var maptype = 'maptype=' + maptype + '&';
 	var markers = 'markers=color:orange%7C' + pos + '%7C&';
-	var key = 'key=AIzaSyD-nFWgulyfBaD2tPsta1DBWxzQ-Qb6lf0';
+	var key = 'key=API_KEY';
 	var url =  base +
 	    center +
 	    zoom +
