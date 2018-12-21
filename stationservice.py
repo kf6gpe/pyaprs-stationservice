@@ -1,4 +1,4 @@
-#! /usr/bin/python
+C#! /usr/bin/python
 
 import aprslib
 import json
@@ -55,7 +55,7 @@ def handlePacket(raw):
             _stationList[packet['from']].update(packet)
         else:
             _stationList[packet['from']] = packet
-        print('- heard ' + packet['from'])
+        # print('- heard ' + packet['from'])
 
     # Record how many bytes we've read...
     _bytesRead = _bytesRead + len(raw)
