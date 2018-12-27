@@ -7,7 +7,7 @@ async function getMapUrl(id, callsign, zoom, width, height, maptype) {
     response = await fetch(serviceUrl);
     const json = await response.json();
     if (response.status != 200) {
-	return 'brokenimage.png';
+	document.getElementById(id).src='brokenimage.png';
     }
     else {
 	var base = 'https://maps.googleapis.com/maps/api/staticmap?';
