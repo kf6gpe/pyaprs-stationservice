@@ -1,4 +1,4 @@
-C#! /usr/bin/python
+#! /usr/bin/python
 
 import aprslib
 import json
@@ -53,6 +53,8 @@ def handlePacket(raw):
         packet['result'] = 'OK'
         if packet['from'] in _stationList:
             _stationList[packet['from']].update(packet)
+            if 'message' not in packet and 'message' in _stationList[packet['from']]:
+                del _stationList[packet['from']]['message']
         else:
             _stationList[packet['from']] = packet
         # print('- heard ' + packet['from'])
