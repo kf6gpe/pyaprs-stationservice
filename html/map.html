@@ -4,15 +4,18 @@
   </head>
 <html>
   <script>
-    getMapUrl('default', 'KF6GPE-9');
-    getMapUrl('small', 'KF6GPE-9', 13, 200, 100);
-    getMapUrl('street', 'KF6GPE-9', 10, 300, 200, 'roadmap');    
+    getMapUrl('default', 'defaultTimestamp', 'KF6GPE-9');
+    getMapUrl('small', 'smallTimestamp', 'KF6GPE-9', 13, 200, 100);
+    getMapUrl('street', 'streetTimestamp', 'KF6GPE-9', 10, 300, 200, 'roadmap');    
   </script>
   <body>
     <p align="center">
     </p><p>
+      <div id="defaultTimestamp">unknown</div>
       <img id="default" src="loadingimage.png"/>
+      <div id="smallTimestamp">unknown</div>
       <img id="small" src="loadingimage.png"/>
+      <div id="streetTimestamp">unknown</div>
       <img id="street" src="loadingimage.png"/>    </p>
   </body>
 </html>

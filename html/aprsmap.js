@@ -1,4 +1,4 @@
-async function getMapUrl(id, callsign, zoom, width, height, maptype) {
+async function getMapUrl(id, timestampId, callsign, zoom, width, height, maptype) {
     zoom = zoom || 15;
     maptype = maptype || 'hybrid';
     width = width || 300;
@@ -25,7 +25,8 @@ async function getMapUrl(id, callsign, zoom, width, height, maptype) {
 	    maptype +
 	    markers +
 	    key;
-	console.log(url);
 	document.getElementById(id).src=url;
+	document.getElementById(timestampId).innerHTML = new Date(json.timestamp * 1000).toLocaleDateString('en-US') + ' ' +
+	    new Date(json.timestamp * 1000).toLocaleTimeString('en-US');
     }
 }
