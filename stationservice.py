@@ -53,8 +53,8 @@ def handlePacket(raw):
         packet['result'] = 'OK'
         if packet['from'] in _stationList:
             _stationList[packet['from']].update(packet)
-            if 'message' not in packet and 'message' in _stationList[packet['from']]:
-                del _stationList[packet['from']]['message']
+            if 'message_text' not in packet and 'message_text' in _stationList[packet['from']]:
+                del _stationList[packet['from']]['message_text']
         else:
             _stationList[packet['from']] = packet
         # print('- heard ' + packet['from'])
