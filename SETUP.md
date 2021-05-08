@@ -9,7 +9,7 @@ pip3 install pyyaml
 pip3 install flask-restful
 pip3 install flask_cors
 
-sudo apt-get install python-twisted
+sudo apt-get install python3-twisted
 ```
 Now edit stationservice.service:
 1.  WorkingDirectory should be where you cloned the repository.
