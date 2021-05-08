@@ -34,7 +34,7 @@ class Station(Resource):
         
 _startTime = time.clock()
 _bytesRead = 0
-_highwaterDelta = 1000000000
+_highwaterDelta = 1000000
 _highwater = _highwaterDelta
 
 def handlePacket(raw):
@@ -69,7 +69,7 @@ def handlePacket(raw):
         minutes, seconds = divmod(rem, 60)
         print("- elapsed {:0>2}:{:0>2}:{:05.2f} read {}".format(int(hours),int(minutes),seconds,_bytesRead))
         # If we're going to overflow, reset the counter and elapsed timer.
-        if sys.maxint - _bytesRead < _highwaterDelta:
+        if sys.maxsize - _bytesRead < _highwaterDelta:
             _bytesRead = 0
             _highwater = highwater_delta
             _startTime = time.clock()
@@ -85,7 +85,8 @@ def runAprsMonitor():
             AIS.connect()
             print('- Connected! Handling incoming packets.')
             AIS.consumer(handlePacket, raw=True)
-        except:
+        except Exception as e:
+            print(e);
             print('- APRS server socket failure... reconnecting in 2 seconds')
             time.sleep(2)
             

@@ -4,10 +4,10 @@ Edit config.yaml providing your callsign, password, and a list of stations to mo
 
 And then
 ```
-pip install aprslib
-pip install pyyaml
-pip install flask-restful
-pip install flask_cors
+pip3 install aprslib
+pip3 install pyyaml
+pip3 install flask-restful
+pip3 install flask_cors
 
 sudo apt-get install python-twisted
 ```
