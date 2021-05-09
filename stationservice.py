@@ -92,7 +92,7 @@ def runAprsMonitor():
             
 # Read configuration
 configFile = open("config.yaml")
-config = yaml.load(configFile)
+config = yaml.load(configFile, Loader=yaml.FullLoader)
 
 if not 'stations' in config or len(config['stations']) == 0:
     sys.exit("pyaprs-stationservice: must specify at least one callsign in configuration.");
